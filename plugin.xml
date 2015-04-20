@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="io.hpd.cordova.gimbal2"
+    version="1.0.0">
+
+    <name>Gimbal2</name>
+    <description>Cordova Gimbal v2 Plugin</description>
+    <author>Denny Tsai</author>
+    <license>Apache 2.0</license>
+    <keywords>cordova,gimbal,ibeacon</keywords>
+    <repo>https://github.com/happydenn/cordova-plugin-gimbal2.git</repo>
+    <issue>https://github.com/happydenn/cordova-plugin-gimbal2/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0" />
+    </engines>
+
+    <js-module src="www/Gimbal2.js" name="Gimbal2">
+        <clobbers target="Gimbal2" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Gimbal2">
+                <param name="android-package" value="io.hpd.cordova.gimbal2.Gimbal2" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        </config-file>
+
+        <source-file src="src/android/Gimbal2.java" target-dir="src/io/hpd/cordova/gimbal2" />
+    </platform>
+
+</plugin>
