@@ -41,4 +41,17 @@
         <source-file src="src/android/Gimbal2.java" target-dir="src/io/hpd/cordova/gimbal2" />
     </platform>
 
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Gimbal2">
+                <param name="ios-package" value="Gimbal2" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Gimbal2.h" />
+        <source-file src="src/ios/Gimbal2.m" />
+
+        <framework src="libz.dylib" />
+    </platform>
+
 </plugin>
