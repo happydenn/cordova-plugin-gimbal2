@@ -69,6 +69,21 @@ Finally for iOS 8 and later, you need to add a new entry to your Xcode project's
 
 From the downloaded SDK, copy all the jars inside the __libs__ folder to the __libs__ folder located in the Android platform folder.
 
+Next inside the __'platforms/android'__ folder of your project, create a new file named __build-extras.gradle__ (open the file if it already exists) and add the following lines:
+
+```
+ext.postBuildExtras = {
+    android {
+        packagingOptions {
+            exclude 'META-INF/notice.txt'
+            exclude 'META-INF/license.txt'
+        }
+    }
+}
+```
+
+This will get rid of the error while building the Android version.
+
 
 ## Plugin API
 
@@ -96,10 +111,10 @@ Events are fired on the window object. Attach event listeners to handle the even
 
 Fires when a beacon is scanned by the BeaconManager.
 
-- RSSI: Signal strength of the sighting
-- datetime: Time when the sighting occured
-- beaconName
-- beaconIdentifier
-- beaconBatteryLevel
-- beaconIconUrl
-- beaconTemperature
+- __RSSI__: Signal strength of the sighting
+- __datetime__: Time when the sighting occured
+- __beaconName__
+- __beaconIdentifier__
+- __beaconBatteryLevel__
+- __beaconIconUrl__
+- __beaconTemperature__
