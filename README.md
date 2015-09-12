@@ -1,9 +1,9 @@
 # Cordova Gimbal v2 Plugin
 
+_This plugin is the successor of cordova-plugin-gimbal which used Gimbal v1 SDK._
+
 A Cordova plugin for scanning and interacting with [Qualcomm Gimbal](http://gimbal.com) beacons.
 Updated for Gimbal SDK v2.
-
-_The development of this plugin is generously sponsored by [PixelPusher](http://pixelpusher.ca/)! Check out their amazing apps utilizing AR and more on their site!_
 
 
 ## Supported Platforms
