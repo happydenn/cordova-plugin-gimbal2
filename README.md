@@ -30,16 +30,8 @@ _Support for previous versions is not possible because the lack of Bluetooth LE 
 
 ### Plugin Setup
 
-*NOT ON OFFICIAL REPOSITORY YET*
 ```text
-cordova plugin add io.hpd.cordova.gimbal
-```
-
-*NOT ON GITHUB YET*
-Or, alternatively you can install the bleeding edge version from Github:
-
-```text
-cordova plugin add https://github.com/happydenn/cordova-plugin-gimbal.git
+cordova plugin add https://github.com/happydenn/cordova-plugin-gimbal2.git
 ```
 
 ### Gimbal SDK Setup
