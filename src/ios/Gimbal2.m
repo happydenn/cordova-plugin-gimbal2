@@ -28,6 +28,8 @@
     statusCallbackId = command.callbackId;
     
     [Gimbal setAPIKey:apiKey options:nil];
+    
+    [Gimbal start];
 }
 
 - (void)startBeaconManager:(CDVInvokedUrlCommand *)command {
