@@ -10,9 +10,10 @@
 #import <Cordova/CDV.h>
 #import <Gimbal/Gimbal.h>
 
-@interface Gimbal2 : CDVPlugin <GMBLBeaconManagerDelegate>
+@interface Gimbal2 : CDVPlugin <GMBLBeaconManagerDelegate,GMBLPlaceManagerDelegate>
 
 @property (nonatomic, strong) GMBLBeaconManager *beaconManager;
+@property (nonatomic, strong) GMBLPlaceManager *placeManager;
 
 - (void)initialize:(CDVInvokedUrlCommand *)command;
 
