@@ -21,6 +21,15 @@ Gimbal2.prototype.eventCallback = function(data) {
     if (data.event == 'onBeaconSighting') {
         cordova.fireWindowEvent('beaconsighting', data);
     }
+    if (data.event == 'onBeginVisit') {
+        cordova.fireWindowEvent('placebeginvisit', data);
+    }
+    if (data.event == 'onEndVisit') {
+        cordova.fireWindowEvent('placeendvisit', data);
+    }
+    if (data.event == 'onBeaconSightingForVisit') {
+        cordova.fireWindowEvent('beaconsightingforvisit', data);
+    }
 };
 
 Gimbal2.prototype.errorCallback = function(data) {

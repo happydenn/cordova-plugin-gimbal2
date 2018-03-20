@@ -107,6 +107,72 @@ Fires when a beacon is scanned by the BeaconManager.
 - __datetime__: Time when the sighting occured
 - __beaconName__
 - __beaconIdentifier__
+- __beaconUniqueIdentifier__
 - __beaconBatteryLevel__
 - __beaconIconUrl__
 - __beaconTemperature__
+
+##### Example:
+
+```javascript
+window.addEventListener("beaconsighting", (e) => {
+    console.log(`Saw a beacon ${e.beaconName} (${beaconUniqueIdentifier}) with RSSI ${e.RSSI}`);
+});
+```
+
+#### placebeginvisit
+
+Fires when a Place is Visited.
+
+- __visitId__
+- __placeId__
+- __placeName__
+- __placeAttributes__: All attributes associated with the place
+
+##### Example:
+
+```javascript
+window.addEventListener("placebeginvisit", (e) => {
+    console.log(`${e.placeName} (${e.placeId}) visit began`);
+});
+```
+
+#### placeendvisit
+
+Fires when a Place Visit ends (ie: you left).
+
+- __visitId__
+- __placeId__
+- __placeName__
+- __placeAttributes__: All attributes associated with the place
+
+##### Example:
+
+```javascript
+window.addEventListener("placeendvisit", (e) => {
+    console.log(`${e.placeName} (${e.placeId}) visit ended`);
+});
+```
+
+#### beaconsightingforvisit
+
+Fire when a beacon is scanned by the PlaceManager. Fires once for each visit this beacon is a member of. ie: If one beacon is part of two Places, this will be emitted twice when that beacon is nearby.
+
+- __visitId__
+- __placeId__
+- __RSSI__: Signal strength of the sighting
+- __datetime__: Time when the sighting occured
+- __beaconName__
+- __beaconIdentifier__
+- __beaconUniqueIdentifier__
+- __beaconBatteryLevel__
+- __beaconIconUrl__
+- __beaconTemperature__
+
+##### Example:
+
+```javascript
+window.addEventListener("beaconsightingforvisit", (e) => {
+    console.log(`Saw a beacon ${beaconName} for ${e.placeId}`);
+});
+```
